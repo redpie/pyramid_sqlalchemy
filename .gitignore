@@ -1,0 +1,16 @@
+*~
+*.egg-info
+*.egg
+*.bak
+.tox
+.vagrant
+*.pyc
+*.pyo
+*.db
+*.sublime-workspace
+.coverage
+nosetests.xml
+.noseids
+build
+dist
+venv
