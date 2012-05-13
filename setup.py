@@ -16,20 +16,22 @@ install_requires = [
 tests_require = []
 
 setup_requires = [
-    'nose'
+    'nose',
+    'coverage'
 ]
 
 dependency_links = []
 
 setup(name='pyramid_sqlalchemy',
       version='0.1',
-      description='pyramid_sqlalchemy',
-      long_description='pyramid_sqlalchemy',
+      description='Simple SQLAlchemy boilerplate reduction for Pyramid',
+      long_description='Simple SQLAlchemy boilerplate reduction for Pyramid',
       classifiers=[],
-      author='',
-      author_email='',
-      url='',
-      keywords='',
+      author='Kiall Mac Innes',
+      author_email='kiall@managedit.ie',
+      url='https://github.com/managedit/pyramid_sqlalchemy',
+      license="BSD",
+      keywords='pylons pyramid sqlalchemy orm migrate migrations database',
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
