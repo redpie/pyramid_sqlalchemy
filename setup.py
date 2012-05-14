@@ -9,8 +9,7 @@ install_requires = [
     'pyramid>=1.3',
     'SQLAlchemy',
     'sqlalchemy-migrate',
-    'zope.sqlalchemy',
-    'transaction'
+    'zope.sqlalchemy'
 ]
 
 tests_require = [

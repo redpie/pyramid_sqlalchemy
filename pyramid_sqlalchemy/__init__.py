@@ -49,9 +49,10 @@ def includeme(config):
 
     settings = config.get_settings()
     engine = engine_from_config(settings, 'sqlalchemy.')
+
     try:
         repository = Repository(settings.get('sqlalchemy_migrate.repository', None))
-    except InvalidRepositoryError:
+    except (InvalidRepositoryError, TypeError):
         LOG.debug('Migrations disabled. No valid repository found.')
         repository = None
 
