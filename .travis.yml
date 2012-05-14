@@ -5,4 +5,4 @@ python:
 install:
   - "python setup.py develop"
 script:
-  - "python setup.py nosetests"
+  - "python setup.py nosetests --with-coverage"
