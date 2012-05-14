@@ -13,11 +13,12 @@ install_requires = [
     'transaction'
 ]
 
-tests_require = []
+tests_require = [
+    'coverage'
+]
 
 setup_requires = [
-    'nose',
-    'coverage'
+    'nose'
 ]
 
 dependency_links = []
