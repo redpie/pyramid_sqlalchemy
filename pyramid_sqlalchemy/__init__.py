@@ -55,5 +55,4 @@ def includeme(config):
         LOG.debug('Migrations disabled. No valid repository found.')
         repository = None
 
-
     Session.configure(bind=engine)
