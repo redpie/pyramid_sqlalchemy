@@ -21,6 +21,11 @@ repository = None
 def db_init(engine):
     """ Initialize a fresh database and place it under version control """
     LOG.warn('Initializing database')
+
+    if repository is None:
+        LOG.warn('No valid repository found. Aborting.')
+        return
+
     versioning_api.version_control(url=engine, repository=repository)
 
 def db_upgrade(engine, version=None):
@@ -29,6 +34,10 @@ def db_upgrade(engine, version=None):
         LOG.warn('Upgrading database to latest version')
     else:
         LOG.warn("Upgrading database to version '%s'" % str(version))
+
+    if repository is None:
+        LOG.warn('No valid repository found. Aborting.')
+        return
 
     versioning_api.upgrade(url=engine, repository=repository, version=version)
 
@@ -41,7 +50,7 @@ def includeme(config):
     settings = config.get_settings()
     engine = engine_from_config(settings, 'sqlalchemy.')
     try:
-        repository = Repository(settings.get('sqlalchemy_migrate.repository', ''))
+        repository = Repository(settings.get('sqlalchemy_migrate.repository', None))
     except InvalidRepositoryError:
         LOG.debug('Migrations disabled. No valid repository found.')
         repository = None
